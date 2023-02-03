@@ -11,8 +11,9 @@ env:
   ENVIRONMENT: ${{ vars.ENVIRONMENT }}
 jobs:
   deployment:
-    runs-on: [ ubuntu-latest, ${{ vars.RUNNER }} ]
     environment: ${{ inputs.ENVIRONMENT }}
+    runs-on:
+      - ${{ vars.RUNNER }}
     steps:
       - name: deploy
         run: |
