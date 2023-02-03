@@ -13,7 +13,7 @@ jobs:
   deployment:
     environment: ${{ inputs.ENVIRONMENT }}
     runs-on:
-      - ${{ vars.RUNNER }}
+      - "${{ vars.RUNNER }}"
     steps:
       - name: deploy
         run: |
