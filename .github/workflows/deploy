@@ -1,0 +1,20 @@
+name: Deployment
+
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Environment to run destroy against'
+        type: environment
+        required: true
+
+jobs:
+  deployment:
+    runs-on: ubuntu-latest
+    environment: 
+      name: dev
+      url: http://test
+    steps:
+      - name: deploy
+        run: |
+          echo ${{ vars.ENVIRONMENT }}
