@@ -12,8 +12,8 @@ jobs:
   deployment:
     runs-on: ubuntu-latest
     environment: 
-      name: dev
-      url: http://test
+      name: ${{ vars.ENVIRONMENT }}
+      url: http://${{ vars.ENVIRONMENT }}
     steps:
       - name: deploy
         run: |
