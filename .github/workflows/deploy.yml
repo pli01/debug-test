@@ -7,15 +7,16 @@ on:
         description: 'Environment to run destroy against'
         type: environment
         required: true
+
 env:
   ENVIRONMENT: ${{ vars.ENVIRONMENT }}
   RUNNER: ${{ vars.RUNNER }}
 jobs:
   deployment:
     environment: ${{ inputs.ENVIRONMENT }}
-    runs-on:
-      - ${{ env.RUNNER }}
+    runs-on: ${{ vars.RUNNER }}
     steps:
       - name: deploy
         run: |
           echo ${{ vars.ENVIRONMENT }}
+          echo ${{ vars.RUNNEr }}
