@@ -17,7 +17,7 @@ env:
 jobs:
   deployment:
     environment: ${{ inputs.ENVIRONMENT }}
-    runs-on: ${{ fromJson(vars.RUNNER) }}
+    runs-on: ubuntu-lates
     steps:
       - name: deploy
         run: |
