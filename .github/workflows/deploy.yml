@@ -9,11 +9,12 @@ on:
         required: true
 env:
   ENVIRONMENT: ${{ vars.ENVIRONMENT }}
+  RUNNER: ${{ vars.RUNNER }}
 jobs:
   deployment:
     environment: ${{ inputs.ENVIRONMENT }}
     runs-on:
-      - "${{ vars.RUNNER }}"
+      - "${{ env.RUNNER }}"
     steps:
       - name: deploy
         run: |
