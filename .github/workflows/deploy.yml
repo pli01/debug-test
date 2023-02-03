@@ -17,7 +17,7 @@ env:
 jobs:
   deployment:
     environment: ${{ inputs.ENVIRONMENT }}
-    runs-on: ubuntu-lates
+    runs-on: ubuntu-latest
     steps:
       - name: deploy
         run: |
