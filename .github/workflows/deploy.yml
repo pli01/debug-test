@@ -11,7 +11,7 @@ env:
   ENVIRONMENT: ${{ vars.ENVIRONMENT }}
 jobs:
   deployment:
-    runs-on: ${{ vars.RUNNER }}
+    runs-on: [ ${{ vars.RUNNER }} ]
     environment: ${{ inputs.ENVIRONMENT }}
     steps:
       - name: deploy
