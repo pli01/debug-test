@@ -14,9 +14,9 @@ env:
 jobs:
   deployment:
     environment: ${{ inputs.ENVIRONMENT }}
-    runs-on: ${{ vars.RUNNER }}
+    runs-on: ${{ fromJson(vars.RUNNER) }}
     steps:
       - name: deploy
         run: |
           echo ${{ vars.ENVIRONMENT }}
-          echo ${{ vars.RUNNEr }}
+          echo ${{ vars.RUNNER }}
